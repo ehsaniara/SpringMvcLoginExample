@@ -2,9 +2,61 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:outputLabel value="Hello, world"/>
+    <f:loadBundle var="multiLingualText"
+                  basename="com.exapot.util.MultilingualText"/>
+    <h:head>
+        <title>#{multiLingualText['SpringMvcLoginExample']}</title>
+    </h:head>
+    <h:form id="loginForm">
+        <p:dialog closable="false"
+                  resizable="false"
+                  draggable="false"
+                  visible="true"
+                  header="#{multiLingualText['SpringMvcLoginExample']}">
+
+
+            <h:panelGrid columns="2">
+                <h:panelGrid columns="1">
+
+                    <h:outputText value="#{multiLingualText['Username']}:"
+                                  style="font-weight: bold;color: #28343b;"/>
+                    <p:inputText value="#{customerBean.username}" required="true"
+                                 label="#{multiLingualText['Username']}:"
+                                 autocomplete="false"
+                                 style="width: 200px;font-weight: bold;"
+                                 placeholder="#{multiLingualText['Username']}"
+                                 validatorMessage="#{multiLingualText['InvalidUsername']}"
+                                 requiredMessage="#{multiLingualText['InvalidUsername']}"/>
+
+
+                    <h:outputText value="#{multiLingualText['Password']}:"
+                                  style="font-weight: bold;color: #28343b;"/>
+                    <p:password value="#{customerBean.password}" required="true"
+                                label="#{multiLingualText['Password']}"
+                                autocomplete="false"
+                                style="width: 200px;font-weight: bold;"
+                                feedback="false" placeholder="#{multiLingualText['Password']}"
+                                validatorMessage="#{multiLingualText['InvalidPassword']}"
+                                requiredMessage="#{multiLingualText['InvalidPassword']}"/>
+
+                    <p:commandButton
+                            onclick="setTimeout('document.getElementById(\'' + this.id + '\').disabled=true;', 50);"
+                            action="#{customerBean.loginCheck}" value="#{multiLingualText['SignIn']}"
+                            update=":messages" ajax="false"
+                            style="height: 35px;width: 210px;color: #eeeeee;"/>
+                </h:panelGrid>
+            </h:panelGrid>
+
+            <p:messages showDetail="true" style="width: 400px;"/>
+            <p style="color: black;width:400px;">
+
+            </p>
+
+        </p:dialog>
+    </h:form>
 </f:view>
 </html>

@@ -1,6 +1,6 @@
 package com.exapot.dao;
 
-import com.exapot.mudel.CustomerImpl;
+import com.exapot.mudel.Customer;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public interface CustomerDao {
-    CustomerImpl getCustomerLogin(String username, String password) throws Exception;
+    Customer getCustomerLogin(String username, String password) throws Exception;
 }

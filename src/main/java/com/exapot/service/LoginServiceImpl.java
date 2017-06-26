@@ -1,7 +1,7 @@
 package com.exapot.service;
 
 import com.exapot.dao.CustomerDao;
-import com.exapot.mudel.CustomerImpl;
+import com.exapot.mudel.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +23,7 @@ public class LoginServiceImpl implements LoginService {
      * @throws Exception
      */
     @Override
-    public CustomerImpl loginCheck(String username, String password) throws Exception {
+    public Customer loginCheck(String username, String password) throws Exception {
 
         try {
             return customerDao.getCustomerLogin(username, password);

@@ -1,5 +1,6 @@
 package com.exapot.dao;
 
+import com.exapot.mudel.Customer;
 import com.exapot.mudel.CustomerImpl;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -15,8 +16,8 @@ import java.util.Locale;
 @Component
 public class CustomerDaoImpl implements CustomerDao {
 
-    private final JdbcTemplate jdbcTemplate;
-    private final PlatformTransactionManager transactionManager;
+    private JdbcTemplate jdbcTemplate;
+    private PlatformTransactionManager transactionManager;
 
     public CustomerDaoImpl(DataSource dataSource, PlatformTransactionManager transactionManager) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
@@ -24,7 +25,7 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
-    public CustomerImpl getCustomerLogin(String username, String password) throws Exception {
+    public Customer getCustomerLogin(String username, String password) throws Exception {
         return getJdbcTemplate().queryForObject(
                 "SELECT * FROM customers c WHERE c.username = ? " +
                         " AND c.password = ? ;",

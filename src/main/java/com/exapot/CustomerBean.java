@@ -1,5 +1,6 @@
 package com.exapot;
 
+import com.exapot.mudel.Customer;
 import com.exapot.mudel.CustomerImpl;
 import com.exapot.service.LoginService;
 import org.slf4j.Logger;
@@ -51,12 +52,12 @@ public class CustomerBean extends CustomerImpl implements Serializable {
             }
 
             //service control
-            CustomerImpl customerImpl = loginService.loginCheck(getUsername(), getPassword());
+            Customer customer = loginService.loginCheck(getUsername(), getPassword());
 
 
-            if (customerImpl != null) {
-                this.setCustomerId(customerImpl.getCustomerId());
-                this.setDisplayName(customerImpl.getDisplayName());
+            if (customer != null) {
+                this.setCustomerId(customer.getCustomerId());
+                this.setDisplayName(customer.getDisplayName());
                 return "index";
             } else {
                 FacesContext.getCurrentInstance().addMessage(null,
