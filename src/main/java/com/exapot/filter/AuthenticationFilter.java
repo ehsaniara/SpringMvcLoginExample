@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by moe on 6/26/17.
+ * Created by Ehsaniara
  * From http://www.ehsaniara.com
  */
 @WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"*.xhtml"})

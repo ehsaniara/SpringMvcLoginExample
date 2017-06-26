@@ -3,7 +3,7 @@ package com.exapot.mudel;
 import java.util.Locale;
 
 /**
- * Created by moe on 6/26/17.
+ * Created by Ehsaniara
  * From https://www.exapot.com
  */
 public interface Customer {
