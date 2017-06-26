@@ -1,5 +1,6 @@
 package com.exapot.service;
 
+import com.exapot.mudel.Customer;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,4 +9,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface LoginService {
+    Customer loginCheck() throws Exception;
 }
