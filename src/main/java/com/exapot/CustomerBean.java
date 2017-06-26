@@ -25,6 +25,7 @@ public class CustomerBean extends Customer implements Serializable {
 
     private static final Logger LOG = LoggerFactory.getLogger(CustomerBean.class);
     private final ResourceBundle rb = ResourceBundle.getBundle("multiLingualText", getLocale());
+
     @Autowired
     private LoginService loginService;
     private boolean login = false;
