@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- JSF Setting -->
+
+    <welcome-file-list>
+        <welcome-file>login.xhtml</welcome-file>
+    </welcome-file-list>
+    <session-config>
+        <tracking-mode>URL</tracking-mode>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+    <servlet>
+        <servlet-name>FacesServlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <context-param>
+        <param-name>primefaces.CLIENT_SIDE_VALIDATION</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.TRANSFORM_METADATA</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>cruze</param-value>
+    </context-param>
+    <servlet-mapping>
+        <servlet-name>FacesServlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>primefaces.FONT_AWESOME</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+
+    <error-page>
+        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        <location>/login.xhtml</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error404.xhtml</location>
+    </error-page>
+
+    <mime-mapping>
+        <extension>xhtml</extension>
+        <mime-type>application/xml</mime-type>
+    </mime-mapping>
+</web-app>
