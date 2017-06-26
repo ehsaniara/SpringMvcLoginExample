@@ -1,6 +1,6 @@
 package com.exapot;
 
-import com.exapot.mudel.Customer;
+import com.exapot.mudel.CustomerImpl;
 import com.exapot.service.LoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,9 +21,9 @@ import java.util.ResourceBundle;
  */
 @ManagedBean
 @SessionScoped
-public class CustomerBean extends Customer implements Serializable {
+public class CustomerImplBean extends CustomerImpl implements Serializable {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CustomerBean.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomerImplBean.class);
     private final ResourceBundle rb = ResourceBundle.getBundle("multiLingualText", getLocale());
 
     @Autowired
@@ -51,12 +51,12 @@ public class CustomerBean extends Customer implements Serializable {
             }
 
             //service control
-            Customer customer = loginService.loginCheck(getUsername(), getPassword());
+            CustomerImpl customerImpl = loginService.loginCheck(getUsername(), getPassword());
 
 
-            if (customer != null) {
-                this.setCustomerId(customer.getCustomerId());
-                this.setDisplayName(customer.getDisplayName());
+            if (customerImpl != null) {
+                this.setCustomerId(customerImpl.getCustomerId());
+                this.setDisplayName(customerImpl.getDisplayName());
                 return "index";
             } else {
                 FacesContext.getCurrentInstance().addMessage(null,

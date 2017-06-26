@@ -3,53 +3,28 @@ package com.exapot.mudel;
 import java.util.Locale;
 
 /**
- * Created by Ehsaniara
- * From http://www.ehsaniara.com
+ * Created by moe on 6/26/17.
+ * From https://www.exapot.com
  */
-public class Customer {
-    private long customerId;
-    private String username;
-    private String password;
-    private Locale locale;
-    private String displayName;
+public interface Customer {
+    long getCustomerId();
 
-    public long getCustomerId() {
-        return customerId;
-    }
+    void setCustomerId(long customerId);
 
-    public void setCustomerId(long customerId) {
-        this.customerId = customerId;
-    }
+    String getUsername();
 
-    public String getUsername() {
-        return username;
-    }
+    void setUsername(String username);
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    String getPassword();
 
-    public String getPassword() {
-        return password;
-    }
+    void setPassword(String password);
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    Locale getLocale();
 
-    public Locale getLocale() {
-        return locale;
-    }
+    void setLocale(Locale locale);
 
-    public void setLocale(Locale locale) {
-        this.locale = locale;
-    }
+    String getDisplayName();
 
-    public String getDisplayName() {
-        return displayName;
-    }
+    void setDisplayName(String displayName);
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
 }
