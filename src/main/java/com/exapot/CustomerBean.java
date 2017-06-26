@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 /**
  * Created by Ehsaniara
- * From https://www.ehsaniara.com
+ * From http://www.ehsaniara.com
  */
 @ManagedBean
 @SessionScoped

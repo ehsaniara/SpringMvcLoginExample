@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * Created by Ehsaniara
- * From https://www.ehsaniara.com
+ * From http://www.ehsaniara.com
  */
 @Service
 public interface LoginService {

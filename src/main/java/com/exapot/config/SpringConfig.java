@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 /**
  * Created by Ehsaniara
- * From https://www.ehsaniara.com
+ * From http://www.ehsaniara.com
  */
 @EnableWebMvc
 @Configuration

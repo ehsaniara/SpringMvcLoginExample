@@ -4,7 +4,7 @@ import java.util.Locale;
 
 /**
  * Created by Ehsaniara
- * From https://www.ehsaniara.com
+ * From http://www.ehsaniara.com
  */
 public class Customer {
     private long customerId;

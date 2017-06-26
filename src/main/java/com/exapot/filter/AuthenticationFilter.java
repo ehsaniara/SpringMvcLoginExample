@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**
  * Created by moe on 6/26/17.
- * From https://www.ehsaniara.com
+ * From http://www.ehsaniara.com
  */
 @WebFilter(filterName = "AuthenticationFilter", urlPatterns = {"*.xhtml"})
 public class AuthenticationFilter implements Filter {

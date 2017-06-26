@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by Ehsaniara
- * From https://www.ehsaniara.com
+ * From http://www.ehsaniara.com
  */
 @Controller
 @RequestMapping("/")
