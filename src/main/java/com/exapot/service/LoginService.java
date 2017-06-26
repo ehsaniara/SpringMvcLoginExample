@@ -9,5 +9,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface LoginService {
-    Customer loginCheck() throws Exception;
+    /**
+     * @param username
+     * @param password
+     * @return
+     * @throws Exception
+     */
+    Customer loginCheck(String username, String password) throws Exception;
 }

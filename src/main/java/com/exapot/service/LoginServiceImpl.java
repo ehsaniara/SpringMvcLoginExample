@@ -10,7 +10,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    public Customer loginCheck() throws Exception {
+    /**
+     * @param username
+     * @param password
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public Customer loginCheck(String username, String password) throws Exception {
         return null;
     }
 

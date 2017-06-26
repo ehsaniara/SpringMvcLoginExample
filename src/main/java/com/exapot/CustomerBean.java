@@ -37,14 +37,28 @@ public class CustomerBean extends Customer implements Serializable {
                 .getAutowireCapableBeanFactory().autowireBean(this);
     }
 
+
     public String loginCheck() {
         try {
-            Customer customer = loginService.loginCheck();
-            if (customer != null) {
 
+            //basic control
+            if (getUsername() == null || getUsername().trim().equals("")) {
+                throw new Exception(rb.getString("InvalidUsername"));
+            }
+
+            if (getPassword() == null || getPassword().trim().equals("")) {
+                throw new Exception(rb.getString("InvalidPassword"));
+            }
+
+            //service control
+            Customer customer = loginService.loginCheck(getUsername(), getPassword());
+
+
+            if (customer != null) {
+                this.setCustomerId(customer.getCustomerId());
+                this.setDisplayName(customer.getDisplayName());
                 return "index";
             } else {
-
                 FacesContext.getCurrentInstance().addMessage(null,
                         new FacesMessage(FacesMessage.SEVERITY_FATAL,
                                 rb.getString("Error"),
