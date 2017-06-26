@@ -1,6 +1,6 @@
 package com.exapot.filter;
 
-import com.exapot.CustomerImplBean;
+import com.exapot.CustomerBean;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -20,11 +20,11 @@ public class AuthenticationFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-        CustomerImplBean operatorBean =
-                (CustomerImplBean) ((HttpServletRequest) req).getSession().getAttribute("operatorBean");
+        CustomerBean customerBean =
+                (CustomerBean) ((HttpServletRequest) req).getSession().getAttribute("customerBean");
         String path = ((HttpServletRequest) req).getRequestURI();
         if (!path.contains("javax.faces.resource")) {
-            if (operatorBean != null && operatorBean.isLogin()) {
+            if (customerBean != null && customerBean.isLogin()) {
                 chain.doFilter(req, resp); // Just continue chain.
             } else {
                 HttpServletResponse response = (HttpServletResponse) resp;

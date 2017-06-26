@@ -21,9 +21,9 @@ import java.util.ResourceBundle;
  */
 @ManagedBean
 @SessionScoped
-public class CustomerImplBean extends CustomerImpl implements Serializable {
+public class CustomerBean extends CustomerImpl implements Serializable {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CustomerImplBean.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CustomerBean.class);
     private final ResourceBundle rb = ResourceBundle.getBundle("multiLingualText", getLocale());
 
     @Autowired
