@@ -13,7 +13,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -22,18 +21,13 @@ import java.util.ResourceBundle;
  */
 @ManagedBean
 @SessionScoped
-public class CustomerBean implements Serializable {
+public class CustomerBean extends Customer implements Serializable {
 
     private static final Logger LOG = LoggerFactory.getLogger(CustomerBean.class);
-
+    private final ResourceBundle rb = ResourceBundle.getBundle("multiLingualText", getLocale());
     @Autowired
     private LoginService loginService;
-
-
-    private Locale locale;
-    private final ResourceBundle rb = ResourceBundle.getBundle("multiLingualText", getLocale());
-    private String username;
-    private String password;
+    private boolean login = false;
 
     @PostConstruct
     private void init() {
@@ -67,27 +61,12 @@ public class CustomerBean implements Serializable {
 
     //Setters & Getters
 
-    public String getUsername() {
-        return username;
+
+    public boolean isLogin() {
+        return login;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Locale getLocale() {
-        return locale;
-    }
-
-    public void setLocale(Locale locale) {
-        this.locale = locale;
+    public void setLogin(boolean login) {
+        this.login = login;
     }
 }
