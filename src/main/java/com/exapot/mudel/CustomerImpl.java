@@ -10,7 +10,7 @@ public class CustomerImpl implements Customer {
     private long customerId;
     private String username;
     private String password;
-    private Locale locale;
+    private Locale locale = Locale.US;
     private String displayName;
 
     public long getCustomerId() {
