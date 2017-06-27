@@ -7,6 +7,9 @@ Hi, This project is a simple demonstration for customerImpl login with the follo
 * Jsf 2.2 ,
 * Java 8
 
+![alt text](loginScreen.png)
+
+
 ## Installation
 
 ```
@@ -19,3 +22,5 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
+
+
